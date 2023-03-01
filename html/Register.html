@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+
+    <script src="../js/jQuery.js"></script>
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="container-fluid" style="height: 100vh; overflow-y: scroll" ;>
+      <div
+        class="container d-flex align-items-center justify-content-center"
+        style="height: 100vh"
+      >
+        <div class="">
+          <div class="d-flex justify-content-center">
+            <img
+              src="../assets/demo_logo.png"
+              alt="nope"
+              class="register-logos"
+            />
+          </div>
+          <div class="login-box" style="min-width: auto; width: 350px">
+            <div class="login-title">
+              <h1>Register to IOC</h1>
+            </div>
+
+            <input
+              class="form-control"
+              type="text"
+              id="name"
+              placeholder="Enter Your Full Name"
+            />
+            <p id="nameErr" class="error-msg"></p>
+
+            <input
+              class="form-control"
+              type="text"
+              id="phone"
+              placeholder="Enter Phone No"
+              ref="{phone}"
+            />
+            <p id="phoneErr" class="error-msg"></p>
+
+            <input
+              class="form-control"
+              type="text"
+              id="email"
+              placeholder="Email Address"
+              ref="{email}"
+            />
+            <p id="emailErr" class="error-msg"></p>
+
+            <button class="btn btn-success w-100" onClick="handleRegister()">
+              Register
+            </button>
+            <div class="d-flex justify-content-center p-2">
+              <a href="./Login.html"> Already Have an Account? </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+      var fullname;
+      var phone;
+      var email;
+      function load() {
+        fullname = document.getElementById("name").value;
+        phone = document.getElementById("phone").value;
+        email = document.getElementById("email").value;
+      }
+      function validate() {
+        load();
+        if (fullname === "") {
+          document.getElementById("nameErr").innerHTML =
+            "Please Enter Your Name";
+        } else {
+          document.getElementById("nameErr").innerHTML = "";
+        }
+
+        if (phone === "") {
+          document.getElementById("phoneErr").innerHTML =
+            "Please Enter Phone Number";
+        } else {
+          document.getElementById("phoneErr").innerHTML = "";
+        }
+
+        if (email === "") {
+          document.getElementById("emailErr").innerHTML =
+            "Please Enter Email Address";
+        } else {
+          document.getElementById("emailErr").innerHTML = "";
+        }
+      }
+      function handleRegister() {
+        load();
+        validate();
+        console.log(fullname, phone, email, "Details");
+      }
+    </script>
+  </body>
+</html>

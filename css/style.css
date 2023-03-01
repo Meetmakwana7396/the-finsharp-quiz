@@ -1,0 +1,97 @@
+@font-face {
+  font-family: Ubuntu;
+  src: url("../font/Ubuntu/Ubuntu-Regular.ttf");
+}
+* {
+  font-family: "Ubuntu", sans-serif;
+  font-size: medium;
+}
+.container-fluid {
+  background-color: #e6f6de;
+}
+.input-fields {
+  width: 300px;
+  min-width: auto;
+}
+
+.login-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.login-title h1 {
+  font-weight: 500;
+}
+
+.login-lables {
+  font-size: 17px;
+  padding-bottom: 5px;
+}
+
+.error-message {
+  color: #e13131;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.register-logos {
+  height: 120px;
+  width: 350px;
+}
+
+.login-box {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.error-msg {
+  color: #e13131;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-success {
+  background-color: #2b948f !important;
+  font-weight: 600;
+}
+
+.poster {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+    url("../assets/quiz-poster.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  align-items: end;
+}
+
+.poster h2 {
+  color: #ffffff;
+  font-weight: 600;
+  margin: 10px 20px;
+}
+
+.question {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+input[type="radio"] {
+  border: 0px;
+  width: 25px !important;
+  height: 25px !important;
+  margin-right: 10px;
+}
+
+.option {
+  position: relative;
+  width: 100%;
+  border-radius: 30px;
+  border: 1px solid gray;
+  padding: 5px 7px;
+  margin: 10px 10px;
+}
