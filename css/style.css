@@ -78,6 +78,10 @@
 .question {
   font-size: 18px;
   font-weight: 600;
+  margin-bottom: 30px;
+}
+.question-bolck{
+  padding: 35px !important;
 }
 
 input[type="radio"] {
@@ -85,13 +89,22 @@ input[type="radio"] {
   width: 25px !important;
   height: 25px !important;
   margin-right: 10px;
+  accent-color: #2b948f;
 }
 
 .option {
   position: relative;
   width: 100%;
-  border-radius: 30px;
   border: 1px solid gray;
-  padding: 5px 7px;
-  margin: 10px 10px;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.navbar{
+  background-color: #2E837E !important;
+ 
+}
+.navbar > span{
+  color:white !important;
 }
