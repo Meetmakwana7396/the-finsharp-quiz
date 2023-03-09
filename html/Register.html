@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script type="text/javascript" src="../js/jQuery.js"></script>
+    <script type="text/javascript" src="../js/quiz.js"></script>
 
-    <script src="../js/jQuery.js"></script>
     <title>Register</title>
   </head>
   <body>
@@ -66,43 +67,5 @@
       </div>
     </div>
     <script src="../js/bootstrap.min.js"></script>
-    <script>
-      var fullname;
-      var phone;
-      var email;
-      function load() {
-        fullname = document.getElementById("name").value;
-        phone = document.getElementById("phone").value;
-        email = document.getElementById("email").value;
-      }
-      function validate() {
-        load();
-        if (fullname === "") {
-          document.getElementById("nameErr").innerHTML =
-            "Please Enter Your Name";
-        } else {
-          document.getElementById("nameErr").innerHTML = "";
-        }
-
-        if (phone === "") {
-          document.getElementById("phoneErr").innerHTML =
-            "Please Enter Phone Number";
-        } else {
-          document.getElementById("phoneErr").innerHTML = "";
-        }
-
-        if (email === "") {
-          document.getElementById("emailErr").innerHTML =
-            "Please Enter Email Address";
-        } else {
-          document.getElementById("emailErr").innerHTML = "";
-        }
-      }
-      function handleRegister() {
-        load();
-        validate();
-        console.log(fullname, phone, email, "Details");
-      }
-    </script>
   </body>
 </html>

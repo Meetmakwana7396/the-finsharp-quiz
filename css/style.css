@@ -6,6 +6,7 @@
   font-family: "Ubuntu", sans-serif;
   font-size: medium;
 }
+
 .container-fluid {
   background-color: #e6f6de;
 }
@@ -59,29 +60,30 @@
 }
 
 .poster {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
-    url("../assets/quiz-poster.jpg");
+  background-color: #2e837e;
   background-repeat: no-repeat;
   background-size: cover;
   height: 200px;
   border-radius: 10px;
   display: flex;
-  align-items: end;
+  align-items: center;
+  justify-content: center;
 }
 
-.poster h2 {
+.poster span {
   color: #ffffff;
   font-weight: 600;
-  margin: 10px 20px;
+  font-size: 120px;
+  line-height: normal;
 }
 
 .question {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   margin-bottom: 30px;
 }
-.question-bolck{
-  padding: 35px !important;
+.question-bolck {
+  padding: 15px !important;
 }
 
 input[type="radio"] {
@@ -95,16 +97,24 @@ input[type="radio"] {
 .option {
   position: relative;
   width: 100%;
-  border: 1px solid gray;
   margin: 15px auto;
   padding: 15px;
   border-radius: 10px;
+  color: #000000;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  background-color: #ffffff;
 }
 
-.navbar{
-  background-color: #2E837E !important;
- 
+.navbar {
+  position: sticky;
+  top: 0;
 }
-.navbar > span{
-  color:white !important;
+.navbar > span {
+  text-align: center;
+  color: white !important;
+}
+
+.quiz-body {
+  background-color: #e6f6de;
 }

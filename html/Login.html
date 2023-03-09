@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,6 +6,8 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <script src="../js/jQuery.js"></script>
+    <script src="../js/quiz.js"></script>
+
     <title>Login</title>
   </head>
   <body>
@@ -61,45 +62,5 @@
       </div>
     </div>
     <script src="../js/bootstrap.min.js"></script>
-    <script>
-      var fullname;
-      var phone;
-      var email;
-      function load() {
-        phone = document.getElementById("phone").value;
-        email = document.getElementById("email").value;
-      }
-      function validate() {
-        load();
-        let isValid = true;
-        if (phone === "") {
-          document.getElementById("phoneErr").innerHTML =
-            "Please Enter Phone Number";
-          isValid = false;
-        } else {
-          document.getElementById("phoneErr").innerHTML = "";
-        }
-
-        if (email === "") {
-          document.getElementById("emailErr").innerHTML =
-            "Please Enter Email Address";
-          isValid = false;
-        } else {
-          document.getElementById("emailErr").innerHTML = "";
-        }
-
-        return isValid;
-      }
-      function handleLogin() {
-        load();
-        if (validate()) {
-          location.href = "./Home.html";
-        } else {
-          console.log("boom");
-        }
-
-        console.log(phone, email, "Details");
-      }
-    </script>
   </body>
 </html>
