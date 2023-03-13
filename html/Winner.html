@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+
+    <script src="../js/jQuery.js"></script>
+    <script src="../js/quiz.js"></script>
+
+    <title>Leaderboard</title>
+  </head>
+  <body class="quiz-body">
+    <div class="container p-4 pt-0" style="max-width: 800px">
+      <nav class="navbar navbar-light" id="nav">
+        <span class="navbar-brand mb-0 mx-auto"
+          ><img
+            src="../assets/demo_logo.png"
+            style="width: 100%; height: auto"
+            alt=""
+            srcset=""
+        /></span>
+      </nav>
+
+      <div class="my-2">
+        <h1>Leaderboard</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Username</th>
+              <th scope="col">Score</th>
+              <th scope="col">Time</th>
+            </tr>
+          </thead>
+          <tbody id="tableData">
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      function handleWinnerList() {
+        $.ajax({
+          url: `${URL}api/winner-list`,
+          type: "post",
+          data: { page: 1, auth_code: "QUIZ123" },
+          dataType: "json",
+          success: function (data) {
+            var detail = data.data;
+            var td = "";
+
+            detail.forEach((element, i) => {
+              td += `<tr>
+              <th scope="row">${i + 1}</th>
+              <td>${element.user_name}</td>
+              <td>${element.score}</td>
+              <td>${element.time}</td>
+            </tr>`;
+            });
+            $("#tableData").html(td)
+          },
+        });
+      }
+      $(document).ready(function () {
+        handleWinnerList();
+      });
+    </script>
+  </body>
+</html>

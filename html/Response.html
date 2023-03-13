@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+
+    <script src="../js/jQuery.js"></script>
+    <script src="../js/quiz.js"></script>
+
+    <title>Home Page</title>
+  </head>
+  <body class="quiz-body">
+    <div class="container p-4 pt-0" style="max-width: 800px">
+      <div class="p-3" style="text-align: center">
+        <p
+          class="message text-dark m-0"
+          style="font-size: 21px; font-weight: bolder"
+        ></p>
+        <p id="score" class="text-dark" style="font-weight: bolder"></p>
+        <div class="btn btn-danger" onclick="handleLogout()">Logout</div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        console.log();
+        if (parseInt(localStorage.getItem("SCORE")) >= 8) {
+          $(".message").html(
+            "You have demonstrated exceptional knowledge and skill in the quiz by getting 8 or more than 8 Score, and your efforts have been rewarded with a prize. Congratulations!"
+          );
+        } else {
+          $(".message").html("Your Response Has Been Recorded Successfully.");
+        }
+
+        $("#score").html(`Your Score: ${localStorage.getItem("SCORE")}/10`);
+      });
+    </script>
+  </body>
+</html>
