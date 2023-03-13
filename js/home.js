@@ -9,7 +9,36 @@ var time;
 $(document).ready(function () {
   getQuestions();
   setTimer(120);
+  adjustNavbar();
+  
 });
+$(window).on('scroll', function () {
+  adjustNavbar();
+});
+
+function adjustNavbar()
+{
+  if ( $(window).scrollTop() > 50) {
+    
+    $(".poster span").css("font-size","45px")
+    $(".poster").css("width","100%");
+    $(".poster").css("height","100px");
+    $(".poster").css("border-radius","0px");
+
+  } 
+  else {
+    if(window.screen.width > 1000)
+    {
+      $(".poster span").css("font-size","120px")
+      $(".poster").css("width","55%");
+      $(".poster").css("height","200px");
+      $(".poster").css("border-radius","10px");
+    }
+    
+    
+    
+  }
+}
 function getQuestions() {
   $.ajax({
     url: `${URL}api/get-questions`,

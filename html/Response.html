@@ -13,16 +13,23 @@
     <title>Home Page</title>
   </head>
   <body class="quiz-body">
+    <nav style="width:100%;text-align: center;">
+      <span class="navbar-brand mb-0 mx-auto">
+        <img src="../assets/demo_logo.png" style="width: 55%; height: auto;
+        margin-bottom: 10px;margin-top: 10px;" alt="" srcset=""/>
+      </span>
+    </nav>
     <div class="container p-4 pt-0" style="max-width: 800px">
       <div class="p-3" style="text-align: center">
         <p
           class="message text-dark m-0"
-          style="font-size: 21px; font-weight: bolder"
+          style="font-size: 1rem; font-weight: bolder"
         ></p>
         <p id="score" class="text-dark" style="font-weight: bolder"></p>
-        <div class="btn btn-danger" onclick="handleLogout()">Logout</div>
+        <div class="btn btn-danger" onclick="handleLogout()">LOGOUT</div>
       </div>
     </div>
+    
     <script>
       $(document).ready(function () {
         console.log();

@@ -5,6 +5,9 @@
 * {
   font-family: "Ubuntu", sans-serif;
   font-size: medium;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .container-fluid {
@@ -37,8 +40,10 @@
 }
 
 .register-logos {
-  height: 120px;
-  width: 350px;
+  width: 28%;
+  
+  display: block;
+  margin: auto;
 }
 
 .login-box {
@@ -67,7 +72,10 @@
   border-radius: 10px;
   display: flex;
   align-items: center;
+  width: 55%;
+  margin: auto;
   justify-content: center;
+  
 }
 
 .poster span {
@@ -75,6 +83,7 @@
   font-weight: 600;
   font-size: 120px;
   line-height: normal;
+  transition: all 0.5s ease-in-out;
 }
 
 .question {
@@ -82,6 +91,7 @@
   font-weight: 600;
   margin-bottom: 30px;
 }
+
 .question-bolck {
   padding: 15px !important;
 }
@@ -101,15 +111,18 @@ input[type="radio"] {
   padding: 15px;
   border-radius: 10px;
   color: #000000;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,rgba(17, 17, 26, 0.05) 0px 8px 32px;
   background-color: #ffffff;
   cursor: pointer;
 }
 
 .navbar {
-  position: sticky;
+  position: fixed !important;
   top: 0;
+  padding: 0 !important;
+  width: 100%;
+  z-index: 999;
+  /* width: 900; */
 }
 .navbar > span {
   text-align: center;
@@ -118,4 +131,29 @@ input[type="radio"] {
 
 .quiz-body {
   background-color: #e6f6de;
+}
+.que_section{
+  padding-top:230px;
+  max-width: 800px !important;
+
+}
+@media screen and (max-width: 1000px) {
+  .poster{
+    width: 100%;
+    border-radius: 0px;
+    height: 100px;
+    
+  }
+  .poster span{
+    font-size: 45px;
+  }
+  .que_section{
+    padding-top:130px;
+  }
+  .register-logos {
+    width: 85%;
+    
+   
+  }
+  
 }
