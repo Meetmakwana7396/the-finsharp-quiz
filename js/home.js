@@ -1,4 +1,4 @@
-const URL = "http://192.168.12.159:9500/";
+const URL = "http://192.168.12.159/";
 
 var QuestionDetails;
 var userAns = {};
@@ -10,33 +10,24 @@ $(document).ready(function () {
   getQuestions();
   setTimer(120);
   adjustNavbar();
-  
 });
-$(window).on('scroll', function () {
+$(window).on("scroll", function () {
   adjustNavbar();
 });
 
-function adjustNavbar()
-{
-  if ( $(window).scrollTop() > 50) {
-    
-    $(".poster span").css("font-size","45px")
-    $(".poster").css("width","100%");
-    $(".poster").css("height","100px");
-    $(".poster").css("border-radius","0px");
-
-  } 
-  else {
-    if(window.screen.width > 1000)
-    {
-      $(".poster span").css("font-size","120px")
-      $(".poster").css("width","55%");
-      $(".poster").css("height","200px");
-      $(".poster").css("border-radius","10px");
+function adjustNavbar() {
+  if ($(window).scrollTop() > 50) {
+    $(".poster span").css("font-size", "45px");
+    $(".poster").css("width", "100%");
+    $(".poster").css("height", "100px");
+    $(".poster").css("border-radius", "0px");
+  } else {
+    if (window.screen.width > 1000) {
+      $(".poster span").css("font-size", "120px");
+      $(".poster").css("width", "55%");
+      $(".poster").css("height", "200px");
+      $(".poster").css("border-radius", "10px");
     }
-    
-    
-    
   }
 }
 function getQuestions() {
@@ -46,7 +37,6 @@ function getQuestions() {
     dataType: "json",
     success: function (data) {
       QuestionDetails = data.data;
-      console.log(QuestionDetails);
       var questions = "";
 
       QuestionDetails.forEach((q, i) => {
@@ -106,7 +96,6 @@ function getQuestions() {
           </div>
         </div>`;
       });
-      console.log(ansSheet);
       $("#questions").html(questions);
     },
   });
@@ -144,6 +133,7 @@ function handleQuizSubmit() {
     dataType: "json",
     success: function (data) {
       if (data.success) {
+        localStorage.setItem("response", 1);
         window.location.replace("./Response.html");
       }
     },

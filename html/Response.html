@@ -13,10 +13,19 @@
     <title>Home Page</title>
   </head>
   <body class="quiz-body">
-    <nav style="width:100%;text-align: center;">
+    <nav style="width: 100%; text-align: center">
       <span class="navbar-brand mb-0 mx-auto">
-        <img src="../assets/demo_logo.png" style="width: 55%; height: auto;
-        margin-bottom: 10px;margin-top: 10px;" alt="" srcset=""/>
+        <img
+          src="../assets/demo_logo.png"
+          style="
+            width: 55%;
+            height: auto;
+            margin-bottom: 10px;
+            margin-top: 10px;
+          "
+          alt=""
+          srcset=""
+        />
       </span>
     </nav>
     <div class="container p-4 pt-0" style="max-width: 800px">
@@ -29,10 +38,14 @@
         <div class="btn btn-danger" onclick="handleLogout()">LOGOUT</div>
       </div>
     </div>
-    
+
     <script>
       $(document).ready(function () {
-        console.log();
+        window.onhashchange = () => {
+          if (localStorage.getItem("respons") === 1) {
+            window.location = "./Response.html";
+          }
+        };
         if (parseInt(localStorage.getItem("SCORE")) >= 8) {
           $(".message").html(
             "You have demonstrated exceptional knowledge and skill in the quiz by getting 8 or more than 8 Score, and your efforts have been rewarded with a prize. Congratulations!"

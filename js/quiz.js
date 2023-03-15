@@ -1,4 +1,4 @@
-const URL = "http://192.168.12.159:9500/";
+const URL = "http://192.168.12.159/";
 
 var fullname;
 var phone;
@@ -60,6 +60,10 @@ function handleRegister() {
 
         window.location = "./Login.html";
       },
+      error: function (xhr, ajaxOptions, thrownError) {
+        $("#RegisterErr").html(xhr.responseJSON.message);
+        console.log(xhr.responseJSON.message);
+      },
     });
   }
   console.log(fullname, phone, email, "Details");
@@ -106,6 +110,8 @@ function handleLogin() {
         localStorage.setItem("MOBILE", data.data.mobile_no);
         localStorage.setItem("EMAIL", data.data.email);
         localStorage.setItem("UID", data.data._id);
+        localStorage.setItem("response", 0);
+
         // getQuestions();
         alert(
           "You're about to Attend 10 question.\n The Time provided is 2 Minutes to Attend all of the Questions. \nTimer Will Start Right After You Click Ok Button."
@@ -113,9 +119,8 @@ function handleLogin() {
         window.location = "./Home.html";
       },
       error: function (xhr, ajaxOptions, thrownError) {
-        if (xhr.status == 404) {
-          alert(thrownError.message);
-        }
+        $("#loginErr").html(xhr.responseJSON.message);
+        console.log(xhr.responseJSON.message);
       },
     });
   } else {

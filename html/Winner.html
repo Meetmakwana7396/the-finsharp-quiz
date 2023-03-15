@@ -14,16 +14,6 @@
   </head>
   <body class="quiz-body">
     <div class="container p-4 pt-0" style="max-width: 800px">
-      <nav class="navbar navbar-light" id="nav">
-        <span class="navbar-brand mb-0 mx-auto"
-          ><img
-            src="../assets/demo_logo.png"
-            style="width: 100%; height: auto"
-            alt=""
-            srcset=""
-        /></span>
-      </nav>
-
       <div class="my-2">
         <h1>Leaderboard</h1>
         <table class="table">
@@ -55,11 +45,32 @@
             </tr>
           </tbody>
         </table>
+        <nav aria-label="">
+          <ul
+            class="pagination border border-2"
+            style="width: fit-content; border-radius: 8px"
+          >
+            <li class="page-item disabled">
+              <span class="page-link bg-transparent">Previous</span>
+            </li>
+            <li class="page-item">
+              <a class="page-link bg-transparent" href="#">1</a>
+            </li>
+            <li class="page-item bg-transparent active" aria-current="page">
+              <span class="page-link">2</span>
+            </li>
+
+            <li class="page-item">
+              <a class="page-link bg-transparent" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
 
     <script>
       function handleWinnerList() {
+        const URL = "http://192.168.12.159/";
         $.ajax({
           url: `${URL}api/winner-list`,
           type: "post",
@@ -77,7 +88,7 @@
               <td>${element.time}</td>
             </tr>`;
             });
-            $("#tableData").html(td)
+            $("#tableData").html(td);
           },
         });
       }

@@ -41,7 +41,7 @@
 
 .register-logos {
   width: 28%;
-  
+
   display: block;
   margin: auto;
 }
@@ -75,7 +75,6 @@
   width: 55%;
   margin: auto;
   justify-content: center;
-  
 }
 
 .poster span {
@@ -104,6 +103,11 @@ input[type="radio"] {
   accent-color: #2b948f;
 }
 
+#loginErr,
+#RegisterErr {
+  color: #e13131;
+}
+
 .option {
   position: relative;
   width: 100%;
@@ -111,7 +115,8 @@ input[type="radio"] {
   padding: 15px;
   border-radius: 10px;
   color: #000000;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
   background-color: #ffffff;
   cursor: pointer;
 }
@@ -128,32 +133,29 @@ input[type="radio"] {
   text-align: center;
   color: white !important;
 }
-
+.page-link {
+  background-color: #e6f6de;
+}
 .quiz-body {
   background-color: #e6f6de;
 }
-.que_section{
-  padding-top:230px;
+.que_section {
+  padding-top: 230px;
   max-width: 800px !important;
-
 }
 @media screen and (max-width: 1000px) {
-  .poster{
+  .poster {
     width: 100%;
     border-radius: 0px;
     height: 100px;
-    
   }
-  .poster span{
+  .poster span {
     font-size: 45px;
   }
-  .que_section{
-    padding-top:130px;
+  .que_section {
+    padding-top: 130px;
   }
   .register-logos {
     width: 85%;
-    
-   
   }
-  
 }
